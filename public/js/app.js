@@ -1,0 +1,2 @@
+function toggleTheme(){document.body.classList.toggle("dark");localStorage.setItem("mabel_theme",document.body.classList.contains("dark")?"dark":"light")}
+if(localStorage.getItem("mabel_theme")==="dark")document.body.classList.add("dark");

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>چت آنلاین | مِیبل AI</title><link rel="stylesheet" href="css/style.css"></head>
+<body class="chat-page">
+<header class="nav"><a class="brand" href="index.html"><span>✦</span><b>مِیبل AI</b></a>
+<nav><a href="index.html">خانه</a><a class="active" href="chat.html">چت</a><a href="features.html">امکانات</a></nav>
+<div class="nav-actions"><button class="theme" onclick="toggleTheme()">◐</button><span class="pill">ONLINE AI</span></div></header>
+<div class="chat-layout">
+<aside class="chat-side"><button class="btn full" onclick="newChat()">＋ گفتگوی جدید</button>
+<input id="chatSearch" class="search" placeholder="جست‌وجو..." oninput="renderHistory()"><small>گفتگوهای اخیر</small><div id="history"></div>
+<div style="margin-top:20px;padding:12px;background:var(--soft);border-radius:12px;font-size:9px;color:var(--muted);line-height:2">🔐 کلید API روی سرور نگه‌داری می‌شود و داخل مرورگر قرار نمی‌گیرد.</div></aside>
+<section class="chatbox">
+<div class="chat-head"><div><b>🤖 مِیبل AI</b><small> ● آنلاین</small></div><button class="ghost" onclick="clearCurrent()">پاک کردن</button></div>
+<div class="messages" id="messages"></div><div id="typing" class="typing">● ● ●</div>
+<div class="composer"><textarea id="input" rows="1" placeholder="پیامت را بنویس..."></textarea><button class="send" onclick="sendMessage()">➤</button><div class="hint">Enter برای ارسال • Shift + Enter خط جدید</div></div>
+</section></div>
+<script src="js/app.js"></script><script src="js/chat.js"></script></body></html>
