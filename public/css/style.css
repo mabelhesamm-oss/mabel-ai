@@ -10,3 +10,1418 @@ body.dark{--bg:#101114;--panel:#18191d;--text:#f4f4f5;--muted:#aaa;--line:#2b2c3
 .chat-page{height:100vh;overflow:hidden}.chat-layout{height:calc(100vh - 72px);display:flex;max-width:1250px;margin:auto}.chat-side{width:260px;background:var(--panel);border-left:1px solid var(--line);padding:18px;overflow:auto}.search{width:100%;margin:12px 0;border:1px solid var(--line);background:var(--soft);color:var(--text);padding:11px;border-radius:10px;outline:0;font-size:11px}.chat-side small{color:var(--muted);font-size:10px}.history-item{padding:11px;border-radius:10px;font-size:11px;margin-top:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer}.history-item:hover{background:var(--soft)}
 .chatbox{flex:1;min-width:0;display:flex;flex-direction:column;background:var(--bg)}.chat-head{height:62px;background:var(--panel);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:0 20px}.chat-head small{color:#35a853;font-size:9px}.messages{flex:1;overflow:auto;padding:25px max(15px,calc((100% - 800px)/2))}.welcome{text-align:center;max-width:650px;margin:12vh auto}.welcome>div{font-size:55px}.welcome h2{font-size:24px}.welcome p{color:var(--muted);font-size:12px}.quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:25px}.quick-grid button{background:var(--panel);color:var(--text);border:1px solid var(--line);padding:14px;border-radius:13px;font-size:10px}.message-row{display:flex;gap:9px;margin:17px 0}.message-row.user{flex-direction:row-reverse}.avatar{width:32px;height:32px;flex:0 0 32px;border-radius:10px;background:var(--soft);display:grid;place-items:center;font-size:13px}.message-row.user .avatar{background:var(--accent);color:var(--on)}.bubble-wrap{max-width:78%}.bubble{background:var(--soft);padding:12px 15px;border-radius:16px;line-height:2;font-size:12px;white-space:pre-wrap}.user .bubble{background:var(--accent);color:var(--on)}.meta{font-size:8px;color:var(--muted);margin:4px}.copy{border:0;background:transparent;color:var(--muted);font-size:8px}.typing{display:none;background:var(--soft);padding:10px 13px;border-radius:13px;width:max-content;font-size:8px;color:var(--muted)}.composer{position:relative;max-width:850px;width:calc(100% - 30px);margin:10px auto 20px;background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:9px;display:flex;align-items:flex-end;box-shadow:0 12px 35px rgba(0,0,0,.05)}.composer textarea{flex:1;background:transparent;border:0;outline:0;color:var(--text);resize:none;min-height:43px;max-height:130px;padding:10px;font-size:12px;line-height:1.8}.send{width:43px;height:43px;border:0;border-radius:12px;background:var(--accent);color:var(--on);cursor:pointer}.hint{position:absolute;bottom:-17px;right:5px;font-size:8px;color:var(--muted)}
 @media(max-width:800px){.nav nav{display:none}.hero{grid-template-columns:1fr;padding-top:60px}.hero-art{height:280px;order:-1}.orb{width:190px;height:190px;font-size:70px}.grid3,.feature-list{grid-template-columns:1fr}.page-title h1{font-size:42px}.chat-side{display:none}.chatbox{width:100%}.quick-grid{grid-template-columns:1fr}.bubble-wrap{max-width:88%}}
+
+/* Mabel AI — Dark Purple Theme */
+:root {
+  color-scheme: dark;
+  --bg: #0b0a12;
+  --panel: #14121f;
+  --text: #f5f1ff;
+  --muted: #b1a9c5;
+  --line: #30283f;
+  --soft: #201a30;
+  --accent: #8b5cf6;
+  --on: #ffffff;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 80% 5%, #382064 0, transparent 35%),
+    var(--bg);
+  color: var(--text);
+}
+
+.nav {
+  background: rgba(15, 12, 25, 0.88);
+  border-color: var(--line);
+}
+
+.brand span {
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  color: #fff;
+  box-shadow: 0 0 22px #8b5cf633;
+}
+
+.nav nav a.active,
+.nav nav a:hover {
+  color: #c4b5fd;
+}
+
+.btn {
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  color: #fff;
+  box-shadow: 0 6px 22px #8b5cf633;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 28px #8b5cf655;
+}
+
+.ghost,
+.theme {
+  border-color: #413353;
+}
+
+.ghost:hover,
+.theme:hover {
+  background: #261d3a;
+  border-color: #8b5cf6;
+}
+
+.pill {
+  color: #c4b5fd;
+  background: #211832;
+  border-color: #49336b;
+}
+
+.hero h1 em,
+.page-title h1 em {
+  color: #a78bfa;
+  text-shadow: 0 0 35px #8b5cf633;
+}
+
+.hero-art {
+  isolation: isolate;
+}
+
+.orb {
+  background: radial-gradient(circle at 35% 25%, #34234f, #171222 70%);
+  border-color: #49336b;
+  box-shadow: 0 0 70px #8b5cf622, 0 30px 80px #0005;
+}
+
+.float-card {
+  background: rgba(28, 22, 43, .94);
+  border-color: #49336b;
+  box-shadow: 0 15px 40px #0004;
+}
+
+.feature {
+  background: linear-gradient(145deg, #191526, #12101b);
+  border-color: #30283f;
+  transition: transform .25s, border-color .25s,
+              box-shadow .25s;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  border-color: #8b5cf6;
+  box-shadow: 0 18px 45px #8b5cf61c;
+}
+
+.cta {
+  background: radial-gradient(ellipse at top, #291b42, #14121f 75%);
+  border-color: #49336b;
+}
+
+footer {
+  border-color: var(--line);
+}
+
+.search,
+.composer,
+.chat-head,
+.chat-side {
+  border-color: var(--line);
+}
+
+.composer {
+  box-shadow: 0 12px 40px #0004, 0 0 25px #8b5cf60a;
+}
+
+.send {
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  color: #fff;
+}
+
+.quick-grid button {
+  transition: border-color .2s, background .2s;
+}
+
+.quick-grid button:hover {
+  border-color: #8b5cf6;
+  background: #211832;
+}
+
+.avatar {
+  background: #261d3a;
+}
+
+.message-row.user .avatar,
+.user .bubble {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  color: #fff;
+}
+
+.bubble {
+  border: 1px solid #30283f;
+}
+
+@media (max-width: 800px) {
+  .nav {
+    height: 62px;
+    padding: 0 14px;
+  }
+
+  .nav-actions .btn {
+    padding: 10px 12px;
+  }
+
+  .hero {
+    padding: 35px 18px 45px;
+    gap: 15px;
+    min-height: auto;
+  }
+
+  .hero-art {
+    height: 220px;
+  }
+
+  .orb {
+    width: 155px;
+    height: 155px;
+    font-size: 60px;
+  }
+
+  .float-card {
+    padding: 10px 12px;
+    font-size: 10px;
+  }
+
+  .c1 {
+    top: 20px;
+    right: 0;
+  }
+
+  .c2 {
+    bottom: 20px;
+    left: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 10vw, 54px);
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .hero-buttons {
+    flex-wrap: wrap;
+  }
+
+  .section,
+  .page {
+    padding: 45px 18px;
+  }
+
+  .grid3,
+  .feature-list {
+    grid-template-columns: 1fr;
+  }
+
+  .cta {
+    margin: 25px 14px 45px;
+    padding: 35px 18px;
+  }
+
+  .chat-head {
+    padding: 0 12px;
+  }
+
+  .messages {
+    padding: 16px 12px;
+  }
+
+  .composer {
+    width: calc(100% - 20px);
+    margin-bottom: 18px;
+  }
+
+  .bubble-wrap {
+    max-width: 88%;
+  }
+}
+
+/* Mabel AI theme toggle fix */
+body.dark {
+  color-scheme: dark;
+  --bg: #0b0a12;
+  --panel: #14121f;
+  --text: #f5f1ff;
+  --muted: #b1a9c5;
+  --line: #30283f;
+  --soft: #201a30;
+  --accent: #8b5cf6;
+  --on: #ffffff;
+}
+
+body:not(.dark) {
+  color-scheme: light;
+  --bg: #f6f3ff;
+  --panel: #ffffff;
+  --text: #211633;
+  --muted: #756b88;
+  --line: #e5dcf5;
+  --soft: #f0eaff;
+  --accent: #7c3aed;
+  --on: #ffffff;
+}
+
+body:not(.dark) {
+  background: var(--bg);
+}
+
+body.dark {
+  background:
+    radial-gradient(ellipse at 80% 5%, #382064 0, transparent 35%),
+    var(--bg);
+}
+
+body:not(.dark) .nav {
+  background: rgba(255, 255, 255, .9);
+}
+
+body:not(.dark) .orb {
+  background: radial-gradient(circle at 35% 25%, #ffffff, #eee5ff);
+  border-color: #ded0f5;
+}
+
+body:not(.dark) .feature {
+  background: linear-gradient(145deg, #fff, #f8f4ff);
+}
+
+body:not(.dark) .cta {
+  background: linear-gradient(135deg, #fff, #f0e8ff);
+}
+
+body:not(.dark) .float-card {
+  background: #fff;
+  border-color: #e5dcf5;
+}
+
+/* Mabel AI — Premium Chat UI */
+.chat-page {
+  min-height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.chat-layout {
+  height: calc(100dvh - 72px);
+  gap: 0;
+}
+
+.chat-side {
+  background: var(--panel);
+  border-color: var(--line);
+}
+
+.chat-head {
+  height: 66px;
+  flex-shrink: 0;
+  background: var(--panel);
+  border-color: var(--line);
+}
+
+.chat-head b {
+  font-size: 14px;
+  letter-spacing: -.2px;
+}
+
+.chat-head small {
+  margin-right: 5px;
+}
+
+.messages {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #655080 transparent;
+}
+
+.welcome {
+  padding: 25px 18px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: linear-gradient(
+    145deg,
+    var(--panel),
+    var(--soft)
+  );
+  box-shadow: 0 20px 60px #00000012;
+}
+
+.welcome > div {
+  filter: drop-shadow(0 0 22px #8b5cf644);
+}
+
+.welcome h2 {
+  color: var(--text);
+}
+
+.quick-grid button {
+  border-radius: 15px;
+  padding: 15px 10px;
+  line-height: 1.8;
+  cursor: pointer;
+}
+
+.message-row {
+  gap: 11px;
+  align-items: flex-start;
+  animation: mabel-message-in .22s ease-out;
+}
+
+.avatar {
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+.bubble-wrap {
+  min-width: 0;
+}
+
+.bubble {
+  border-radius: 17px;
+  padding: 13px 16px;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.message-row:not(.user) .bubble {
+  background: var(--panel);
+  border-color: var(--line);
+  border-top-right-radius: 5px;
+}
+
+.message-row.user .bubble {
+  border: 1px solid #a78bfa55;
+  border-top-left-radius: 5px;
+  box-shadow: 0 6px 22px #7c3aed18;
+}
+
+.composer {
+  border-color: #8b5cf655;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.composer:focus-within {
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 3px #8b5cf61c,
+              0 12px 35px #00000018;
+}
+
+.composer textarea {
+  min-width: 0;
+}
+
+.send {
+  flex-shrink: 0;
+  transition: transform .15s, filter .15s;
+}
+
+.send:hover {
+  filter: brightness(1.12);
+}
+
+.send:active {
+  transform: scale(.94);
+}
+
+.chat-side .btn {
+  margin-bottom: 5px;
+}
+
+.history-item {
+  transition: background .2s;
+}
+
+@keyframes mabel-message-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 800px) {
+  .chat-page {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .chat-layout {
+    height: calc(100vh - 62px);
+    height: calc(100dvh - 62px);
+  }
+
+  .chat-head {
+    height: 58px;
+    padding: 0 12px;
+  }
+
+  .chat-head b {
+    font-size: 12px;
+  }
+
+  .chat-head .ghost {
+    padding: 9px 11px;
+    font-size: 11px;
+  }
+
+  .messages {
+    padding: 16px 12px 24px;
+  }
+
+  .welcome {
+    margin: 35px auto;
+    padding: 22px 14px;
+    border-radius: 19px;
+  }
+
+  .welcome h2 {
+    font-size: 21px;
+  }
+
+  .message-row {
+    gap: 7px;
+    margin: 14px 0;
+  }
+
+  .avatar {
+    width: 29px;
+    height: 29px;
+    flex-basis: 29px;
+  }
+
+  .bubble {
+    padding: 11px 13px;
+    font-size: 12px;
+  }
+
+  .composer {
+    margin: 8px auto 18px;
+    padding: 7px;
+    border-radius: 15px;
+  }
+
+  .composer textarea {
+    padding: 9px;
+    font-size: 13px;
+  }
+
+  .send {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hint {
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .message-row {
+    animation: none;
+  }
+}
+
+/* Mabel AI — Glassmorphism */
+.chatbox {
+  background:
+    radial-gradient(ellipse at 80% 20%, #8b5cf61c, transparent 42%),
+    radial-gradient(ellipse at 15% 85%, #a855f714, transparent 38%),
+    var(--bg);
+}
+
+.nav {
+  background: color-mix(in srgb, var(--panel) 65%, transparent);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  backdrop-filter: blur(22px) saturate(160%);
+}
+
+.chat-side {
+  background: color-mix(in srgb, var(--panel) 68%, transparent);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.chat-head {
+  background: color-mix(in srgb, var(--panel) 65%, transparent);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
+}
+
+.composer {
+  background: color-mix(in srgb, var(--panel) 72%, transparent);
+  border: 1px solid #a78bfa66;
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  backdrop-filter: blur(24px) saturate(160%);
+  box-shadow:
+    0 12px 40px #00000018,
+    inset 0 1px 0 #ffffff14,
+    0 0 24px #8b5cf615;
+}
+
+.bubble {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.message-row:not(.user) .bubble {
+  background: color-mix(in srgb, var(--panel) 78%, transparent);
+  border: 1px solid color-mix(in srgb, var(--line) 75%, #a78bfa);
+  box-shadow: inset 0 1px 0 #ffffff09;
+}
+
+.message-row.user .bubble {
+  background: linear-gradient(
+    135deg,
+    #8b5cf6e8,
+    #6d28d9e8
+  );
+  border: 1px solid #c4b5fd88;
+  box-shadow:
+    0 8px 25px #7c3aed25,
+    inset 0 1px 0 #ffffff35;
+}
+
+.welcome {
+  background: color-mix(in srgb, var(--panel) 72%, transparent);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border-color: #a78bfa44;
+  box-shadow:
+    0 20px 60px #00000015,
+    inset 0 1px 0 #ffffff12;
+}
+
+.quick-grid button {
+  background: color-mix(in srgb, var(--panel) 65%, transparent);
+  border-color: #a78bfa40;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.quick-grid button:hover {
+  background: color-mix(in srgb, #8b5cf6 15%, var(--panel));
+  border-color: #a78bfa;
+}
+
+.float-card {
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  background: color-mix(in srgb, var(--panel) 72%, transparent);
+  border-color: #a78bfa55;
+}
+
+.orb {
+  background: radial-gradient(
+    circle at 35% 25%,
+    #a78bfa35,
+    color-mix(in srgb, var(--panel) 65%, transparent) 72%
+  );
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-color: #a78bfa66;
+}
+
+.feature {
+  background: color-mix(in srgb, var(--panel) 76%, transparent);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-color: #a78bfa33;
+}
+
+.feature:hover {
+  border-color: #a78bfa99;
+  box-shadow: 0 18px 45px #8b5cf625;
+}
+
+.cta {
+  background: color-mix(in srgb, var(--panel) 70%, transparent);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border-color: #a78bfa55;
+}
+
+@media (max-width: 800px) {
+  .chat-side {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .composer {
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .composer,
+  .chat-head,
+  .chat-side,
+  .welcome,
+  .feature,
+  .cta,
+  .message-row:not(.user) .bubble {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: var(--panel);
+  }
+}
+
+/* ✨ MABEL AI — ULTRA PURPLE GLASS THEME */
+
+:root {
+  --glass-border: rgba(190, 150, 255, .38);
+  --purple-glow: rgba(139, 92, 246, .38);
+}
+
+/* پس‌زمینه اصلی */
+body {
+  background:
+    radial-gradient(ellipse at 15% 15%, #5825a944, transparent 38%),
+    radial-gradient(ellipse at 85% 75%, #7c3aed30, transparent 40%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+/* نوار بالای سایت */
+.nav {
+  background: rgba(25, 14, 48, .58) !important;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 0 24px #8b5cf625, inset 0 1px #ffffff18;
+  backdrop-filter: blur(24px) saturate(170%);
+  -webkit-backdrop-filter: blur(24px) saturate(170%);
+}
+
+/* لینک‌ها و دکمه‌ها */
+.btn,
+.send,
+.theme,
+.ghost,
+.nav nav a {
+  transition: all .25s ease;
+}
+
+.btn,
+.send {
+  background: linear-gradient(135deg, #a855f7, #6d28d9);
+  border: 1px solid #d8b4fe88;
+  box-shadow: 0 0 18px #9333ea55, inset 0 1px #ffffff55;
+}
+
+.btn:hover,
+.send:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px #a855f799, 0 0 55px #7c3aed33;
+}
+
+.ghost,
+.theme {
+  background: rgba(139, 92, 246, .10);
+  border-color: var(--glass-border);
+  backdrop-filter: blur(12px);
+}
+
+.ghost:hover,
+.theme:hover {
+  background: rgba(139, 92, 246, .25);
+  box-shadow: 0 0 18px #8b5cf655;
+}
+
+/* کارت‌ها و بخش‌های صفحه اصلی */
+.feature,
+.cta,
+.float-card,
+.orb,
+.pill {
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  border-color: var(--glass-border);
+  box-shadow: 0 10px 35px #00000020, inset 0 1px #ffffff12;
+}
+
+.feature {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 28px #8b5cf644, inset 0 1px #ffffff25;
+}
+
+.orb {
+  box-shadow: 0 0 45px #8b5cf633, inset 0 0 35px #a855f722;
+}
+
+/* صفحه امکانات */
+.page,
+.section,
+.page-title {
+  position: relative;
+}
+
+.feature-list .feature {
+  background: color-mix(in srgb, var(--panel) 68%, transparent);
+  border: 1px solid var(--glass-border);
+}
+
+/* صفحه چت: نوار کناری */
+.chat-side {
+  background: rgba(25, 14, 48, .52);
+  border-color: var(--glass-border);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+}
+
+/* سربرگ چت */
+.chat-head {
+  background: rgba(25, 14, 48, .48);
+  border-color: var(--glass-border);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+/* کادر پیام‌ها */
+.messages {
+  background:
+    radial-gradient(ellipse at 90% 10%, #8b5cf618, transparent 40%),
+    transparent;
+}
+
+/* پیام‌های دستیار */
+.message-row:not(.user) .bubble {
+  background: rgba(112, 75, 160, .18);
+  border: 1px solid #c4b5fd40;
+  box-shadow: inset 0 1px #ffffff14, 0 5px 20px #00000012;
+  backdrop-filter: blur(16px);
+}
+
+/* پیام‌های خود کاربر */
+.message-row.user .bubble {
+  background: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, .92),
+    rgba(91, 33, 182, .90)
+  );
+  border: 1px solid #e9d5ff88;
+  box-shadow: 0 0 22px #9333ea35, inset 0 1px #ffffff40;
+}
+
+/* کادر نوشتن پیام */
+.composer {
+  background: rgba(35, 21, 62, .66);
+  border: 1px solid #c4b5fd88;
+  box-shadow:
+    0 0 22px #8b5cf633,
+    0 12px 35px #00000025,
+    inset 0 1px #ffffff24;
+  backdrop-filter: blur(28px) saturate(170%);
+  -webkit-backdrop-filter: blur(28px) saturate(170%);
+  transition: box-shadow .25s ease, border-color .25s ease;
+}
+
+.composer:focus-within {
+  border-color: #d8b4fe;
+  box-shadow: 0 0 12px #a855f766, 0 0 35px #8b5cf644;
+}
+
+/* پیشنهادهای شروع گفتگو */
+.quick-grid button {
+  background: rgba(112, 75, 160, .18);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  backdrop-filter: blur(15px);
+  transition: all .25s ease;
+}
+
+.quick-grid button:hover {
+  transform: translateY(-3px);
+  background: rgba(139, 92, 246, .25);
+  box-shadow: 0 0 20px #8b5cf644;
+}
+
+/* کادر خوش‌آمدگویی */
+.welcome {
+  background: rgba(35, 21, 62, .32);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 0 35px #8b5cf618, inset 0 1px #ffffff12;
+  backdrop-filter: blur(18px);
+}
+
+/* تاریخچه گفتگو */
+.history-item {
+  border: 1px solid transparent;
+  transition: all .2s ease;
+}
+
+.history-item:hover {
+  background: rgba(139, 92, 246, .18);
+  border-color: var(--glass-border);
+  box-shadow: 0 0 15px #8b5cf622;
+}
+
+/* ورودی جست‌وجو */
+.search {
+  background: rgba(35, 21, 62, .45);
+  border-color: var(--glass-border);
+  backdrop-filter: blur(12px);
+}
+
+.search:focus {
+  border-color: #a78bfa;
+  box-shadow: 0 0 16px #8b5cf633;
+}
+
+/* انیمیشن درخشش ملایم */
+@keyframes mabelGlow {
+  0%, 100% { box-shadow: 0 0 18px #8b5cf622; }
+  50% { box-shadow: 0 0 28px #a855f744; }
+}
+
+.brand span {
+  background: linear-gradient(135deg, #a855f7, #6d28d9);
+  box-shadow: 0 0 20px #9333ea66;
+}
+
+@media (max-width: 800px) {
+  .nav {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .composer {
+    background: rgba(35, 21, 62, .88);
+    backdrop-filter: blur(18px);
+  }
+
+  .feature,
+  .cta,
+  .welcome {
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* Mabel AI — Fix page width */
+html,
+body {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+main {
+  width: 100%;
+  max-width: none;
+}
+
+.hero,
+.section,
+.cta,
+.page {
+  box-sizing: border-box;
+}
+
+@media (min-width: 801px) {
+  .hero {
+    width: 100%;
+  }
+}
+
+/* Mabel AI — Desktop layout correction */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+main {
+  width: 100%;
+  max-width: none;
+}
+
+.hero {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section,
+.cta,
+.page {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chat-layout {
+  width: 100%;
+  max-width: 100%;
+}
+
+.chatbox {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (min-width: 1400px) {
+  .hero,
+  .section,
+  .cta,
+  .page {
+    max-width: 1500px;
+  }
+}
+
+/* ==========================================
+   MABEL AI — PREMIUM GLASS & NEON UPGRADE
+   ========================================== */
+
+:root {
+  --mabel-purple: #a855f7;
+  --mabel-violet: #7c3aed;
+  --mabel-lilac: #d8b4fe;
+  --mabel-glass-border: rgba(192, 132, 252, .32);
+  --mabel-glow: rgba(139, 92, 246, .24);
+}
+
+/* پس‌زمینه درخشان */
+body {
+  background:
+    radial-gradient(ellipse at 8% 12%, rgba(139, 92, 246, .16), transparent 34%),
+    radial-gradient(ellipse at 92% 62%, rgba(168, 85, 247, .12), transparent 36%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+/* نوار بالای شیشه‌ای */
+.nav {
+  background: color-mix(in srgb, var(--panel) 64%, transparent);
+  border-bottom: 1px solid var(--mabel-glass-border);
+  box-shadow: 0 8px 32px rgba(70, 30, 120, .10);
+  backdrop-filter: blur(24px) saturate(165%);
+  -webkit-backdrop-filter: blur(24px) saturate(165%);
+}
+
+/* لوگوی میبل */
+.brand span {
+  background: linear-gradient(135deg, #c084fc, #7c3aed);
+  box-shadow: 0 0 18px rgba(168, 85, 247, .5);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.brand:hover span {
+  transform: rotate(-8deg) scale(1.06);
+  box-shadow: 0 0 28px rgba(168, 85, 247, .7);
+}
+
+/* دکمه‌های نئونی */
+.btn,
+.send {
+  background: linear-gradient(135deg, #a855f7, #6d28d9);
+  border: 1px solid rgba(216, 180, 254, .65);
+  box-shadow:
+    0 5px 20px rgba(124, 58, 237, .22),
+    inset 0 1px rgba(255, 255, 255, .35);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.btn:hover,
+.send:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 22px rgba(168, 85, 247, .48),
+    0 8px 26px rgba(124, 58, 237, .25);
+}
+
+.ghost,
+.theme {
+  background: color-mix(in srgb, var(--panel) 62%, transparent);
+  border: 1px solid var(--mabel-glass-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: background .25s ease, box-shadow .25s ease;
+}
+
+.ghost:hover,
+.theme:hover {
+  box-shadow: 0 0 18px var(--mabel-glow);
+}
+
+/* شیشه‌ای شدن کارت‌ها */
+.feature,
+.cta,
+.float-card,
+.pill,
+.quick-grid button,
+.history-item {
+  border-color: var(--mabel-glass-border);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+
+.feature,
+.float-card,
+.cta {
+  box-shadow:
+    0 12px 36px rgba(30, 10, 60, .08),
+    inset 0 1px rgba(255, 255, 255, .16);
+}
+
+.feature {
+  transition: transform .3s ease, border-color .3s ease,
+              box-shadow .3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  border-color: rgba(192, 132, 252, .75);
+  box-shadow:
+    0 14px 40px rgba(124, 58, 237, .14),
+    inset 0 1px rgba(255, 255, 255, .2);
+}
+
+/* گوی مرکزی صفحه خانه */
+.orb {
+  border-color: rgba(192, 132, 252, .5);
+  box-shadow:
+    0 0 35px rgba(139, 92, 246, .2),
+    inset 0 0 35px rgba(168, 85, 247, .12);
+  animation: mabelOrbFloat 6s ease-in-out infinite;
+}
+
+/* کارت‌های شناور */
+.float-card {
+  animation: mabelFloat 5s ease-in-out infinite;
+}
+
+.float-card.c2 {
+  animation-delay: -2.5s;
+}
+
+/* پس‌زمینه صفحه چت */
+.chatbox {
+  background:
+    radial-gradient(ellipse at 85% 10%, rgba(139, 92, 246, .12), transparent 38%),
+    radial-gradient(ellipse at 12% 80%, rgba(168, 85, 247, .08), transparent 34%),
+    var(--bg);
+}
+
+.chat-side,
+.chat-head {
+  background: color-mix(in srgb, var(--panel) 66%, transparent);
+  border-color: var(--mabel-glass-border);
+  backdrop-filter: blur(22px) saturate(155%);
+  -webkit-backdrop-filter: blur(22px) saturate(155%);
+}
+
+/* پیام‌های دستیار */
+.message-row:not(.user) .bubble {
+  background: color-mix(in srgb, var(--panel) 72%, transparent);
+  border: 1px solid var(--mabel-glass-border);
+  box-shadow: inset 0 1px rgba(255, 255, 255, .10);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* پیام‌های کاربر */
+.message-row.user .bubble {
+  background: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, .94),
+    rgba(91, 33, 182, .94)
+  );
+  border: 1px solid rgba(216, 180, 254, .65);
+  box-shadow:
+    0 5px 20px rgba(124, 58, 237, .2),
+    inset 0 1px rgba(255, 255, 255, .3);
+}
+
+/* کادر نوشتن پیام */
+.composer {
+  background: color-mix(in srgb, var(--panel) 68%, transparent);
+  border: 1px solid rgba(192, 132, 252, .52);
+  box-shadow:
+    0 10px 38px rgba(40, 15, 70, .12),
+    inset 0 1px rgba(255, 255, 255, .16);
+  backdrop-filter: blur(26px) saturate(165%);
+  -webkit-backdrop-filter: blur(26px) saturate(165%);
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+.composer:focus-within {
+  border-color: #c084fc;
+  box-shadow:
+    0 0 0 3px rgba(168, 85, 247, .08),
+    0 0 26px rgba(139, 92, 246, .2);
+}
+
+/* پیشنهادهای شروع چت */
+.quick-grid button {
+  transition: transform .25s ease, background .25s ease,
+              border-color .25s ease;
+}
+
+.quick-grid button:hover {
+  transform: translateY(-3px);
+  background: color-mix(in srgb, #8b5cf6 14%, var(--panel));
+  border-color: rgba(192, 132, 252, .8);
+}
+
+/* کادر خوش‌آمدگویی */
+.welcome {
+  border: 1px solid var(--mabel-glass-border);
+  border-radius: 24px;
+  box-shadow:
+    0 16px 45px rgba(40, 15, 70, .08),
+    inset 0 1px rgba(255, 255, 255, .12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* جست‌وجو و تاریخچه */
+.search {
+  border-color: var(--mabel-glass-border);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.search:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 14px rgba(139, 92, 246, .16);
+}
+
+.history-item:hover {
+  border-color: var(--mabel-glass-border);
+}
+
+/* انیمیشن‌ها */
+@keyframes mabelFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes mabelOrbFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* حرکت کمتر برای کسانی که ترجیح می‌دهند */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* سازگاری با موبایل */
+@media (max-width: 800px) {
+  .nav {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .hero {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .composer {
+    width: calc(100% - 24px);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .orb {
+    animation: none;
+  }
+
+  .float-card {
+    animation: none;
+  }
+}
+
+/* =================================
+   MABEL AI — NEON POLISH V2
+   ================================= */
+
+:root {
+  --neon-main: #a855f7;
+  --neon-light: #d8b4fe;
+  --neon-deep: #6d28d9;
+  --neon-line: rgba(192, 132, 252, .32);
+}
+
+/* نور محیطی بیشتر، بدون تغییر اندازه صفحه */
+body:not(.chat-page) {
+  background-image:
+    radial-gradient(ellipse at 12% 8%, #7c3aed24, transparent 34%),
+    radial-gradient(ellipse at 88% 48%, #a855f71c, transparent 36%),
+    radial-gradient(ellipse at 50% 100%, #6d28d912, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* کارت‌ها: شیشه عمیق‌تر */
+.feature,
+.cta,
+.float-card,
+.welcome,
+.composer,
+.chat-head,
+.chat-side {
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, .16),
+    inset 0 1px 0 rgba(255, 255, 255, .09);
+}
+
+/* هاله نئونی روی کارت‌ها */
+.feature,
+.float-card,
+.cta {
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.feature:hover,
+.float-card:hover,
+.cta:hover {
+  border-color: rgba(192, 132, 252, .72);
+  box-shadow:
+    0 0 22px rgba(139, 92, 246, .14),
+    0 16px 42px rgba(0, 0, 0, .18),
+    inset 0 1px 0 rgba(255, 255, 255, .14);
+}
+
+/* لوگوی درخشان */
+.brand span {
+  box-shadow:
+    0 0 12px #a855f766,
+    0 0 28px #7c3aed33,
+    inset 0 1px #ffffff55;
+}
+
+/* دکمه اصلی */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, .25),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left .65s ease;
+  pointer-events: none;
+}
+
+.btn:hover::after {
+  left: 150%;
+}
+
+/* هاله اطراف کادر تایپ */
+.composer:focus-within {
+  border-color: #c084fc;
+  box-shadow:
+    0 0 0 1px #a855f733,
+    0 0 24px #8b5cf633,
+    inset 0 1px #ffffff18;
+}
+
+/* ظاهر یکپارچه پیام‌ها */
+.message-row .bubble {
+  border-radius: 17px;
+  overflow-wrap: anywhere;
+  transition: border-color .25s ease;
+}
+
+/* خط نئونی زیر سربرگ چت */
+.chat-head {
+  border-bottom-color: #a855f744;
+}
+
+/* کادر جست‌وجو */
+.search {
+  border-radius: 13px;
+}
+
+.search:focus {
+  outline: none;
+  border-color: #a855f7;
+  box-shadow: 0 0 16px #8b5cf62b;
+}
+
+/* حرکت ملایم و بهینه */
+@media (prefers-reduced-motion: no-preference) {
+  .orb {
+    animation: mabelOrbFloat 7s ease-in-out infinite;
+  }
+}
+
+/* کاهش افکت‌ها در موبایل برای روان‌تر شدن */
+@media (max-width: 800px) {
+  .feature,
+  .float-card,
+  .cta {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .feature:hover,
+  .float-card:hover,
+  .cta:hover {
+    transform: none;
+  }
+
+  .btn::after {
+    display: none;
+  }
+}
+
+/* رعایت تنظیمات کاهش حرکت سیستم */
+@media (prefers-reduced-motion: reduce) {
+  .orb,
+  .float-card {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
