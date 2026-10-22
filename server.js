@@ -218,6 +218,7 @@ app.post("/api/analyze-file", (req, res) => {
   });
 });
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Mabel AI running on port ${port}`);
+});
 });
