@@ -10,7 +10,23 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* اختصاصی نماد ماه Mabel AI */
+    :root {
+      --mabel-purple: #a78bfa;
+      --mabel-light: #ddd0ff;
+      --mabel-deep: #7c3aed;
+      --mabel-glass: rgba(139, 92, 246, .12);
+      --mabel-border: rgba(196, 181, 253, .22);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body.chat-page {
+      min-height: 100vh;
+    }
+
+    /* نماد اختصاصی ماه */
     .mabel-mark {
       display: inline-flex;
       align-items: center;
@@ -21,11 +37,11 @@
       border-radius: 13px;
       background: linear-gradient(
         145deg,
-        rgba(167, 139, 250, .16),
+        rgba(167, 139, 250, .2),
         rgba(124, 58, 237, .06)
       );
-      border: 1px solid rgba(196, 181, 253, .20);
-      box-shadow: 0 4px 18px rgba(124, 58, 237, .12);
+      border: 1px solid var(--mabel-border);
+      box-shadow: 0 4px 20px rgba(124, 58, 237, .16);
     }
 
     .mabel-mark svg {
@@ -33,7 +49,7 @@
       width: 28px;
       height: 28px;
       overflow: visible;
-      filter: drop-shadow(0 2px 5px rgba(139, 92, 246, .35));
+      filter: drop-shadow(0 2px 7px rgba(139, 92, 246, .45));
     }
 
     .brand {
@@ -44,7 +60,7 @@
     }
 
     .brand .brand-name {
-      letter-spacing: .2px;
+      letter-spacing: .3px;
     }
 
     .chat-brand {
@@ -54,26 +70,188 @@
     }
 
     .chat-brand .mabel-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 11px;
-    }
-
-    .chat-brand .mabel-mark svg {
-      width: 25px;
-      height: 25px;
+      width: 36px;
+      height: 36px;
     }
 
     .chat-brand-text {
       display: inline-flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 4px;
     }
 
     .chat-brand-text small {
-      color: #a78bfa;
+      color: var(--mabel-purple);
       font-size: 11px;
-      font-weight: 500;
+      font-weight: 600;
+    }
+
+    /* ناحیه چت */
+    .chat-layout {
+      gap: 18px;
+    }
+
+    .chat-side,
+    .chatbox {
+      border: 1px solid var(--mabel-border);
+      background: rgba(24, 17, 40, .62);
+      box-shadow:
+        0 12px 40px rgba(0, 0, 0, .16),
+        inset 0 1px 0 rgba(255, 255, 255, .035);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .chatbox {
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    .chat-head {
+      border-bottom: 1px solid rgba(196, 181, 253, .12);
+    }
+
+    /* کادر ارسال پیام */
+    .composer {
+      position: relative;
+      border: 1px solid rgba(167, 139, 250, .26);
+      background: rgba(16, 13, 28, .76);
+      box-shadow: 0 -8px 32px rgba(0, 0, 0, .12);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .file-tools {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    /* دکمه + */
+    .add-file-btn {
+      width: 46px;
+      height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      border-radius: 15px;
+      border: 1px solid rgba(167, 139, 250, .48);
+      background: linear-gradient(
+        145deg,
+        rgba(167, 139, 250, .24),
+        rgba(124, 58, 237, .10)
+      );
+      color: var(--mabel-light);
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow:
+        0 0 18px rgba(124, 58, 237, .14),
+        inset 0 1px 0 rgba(255, 255, 255, .12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease,
+        background .2s ease;
+    }
+
+    .add-file-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(196, 181, 253, .8);
+      background: rgba(139, 92, 246, .3);
+      box-shadow: 0 0 25px rgba(139, 92, 246, .32);
+    }
+
+    .add-file-btn:active {
+      transform: scale(.94);
+    }
+
+    .add-file-btn:focus-visible,
+    .send:focus-visible {
+      outline: 2px solid var(--mabel-light);
+      outline-offset: 3px;
+    }
+
+    /* دکمه بررسی فایل */
+    .file-check-btn {
+      min-height: 44px;
+      border: 1px solid rgba(167, 139, 250, .3);
+      box-shadow: 0 0 16px rgba(124, 58, 237, .1);
+    }
+
+    /* نمایش فایل انتخاب‌شده */
+    .file-status {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 8px;
+      padding: 10px 12px;
+      border: 1px solid rgba(167, 139, 250, .24);
+      border-radius: 12px;
+      background: rgba(139, 92, 246, .09);
+      color: #d9ccff;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .file-status.visible {
+      display: flex;
+    }
+
+    .file-status-name {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .remove-file-btn {
+      flex: 0 0 auto;
+      padding: 3px 8px;
+      border: 1px solid rgba(248, 113, 113, .28);
+      border-radius: 8px;
+      background: rgba(248, 113, 113, .08);
+      color: #fca5a5;
+      cursor: pointer;
+    }
+
+    .remove-file-btn:hover {
+      background: rgba(248, 113, 113, .17);
+    }
+
+    .composer textarea {
+      min-width: 0;
+    }
+
+    .hint {
+      opacity: .8;
+    }
+
+    @media (max-width: 700px) {
+      .chat-layout {
+        gap: 12px;
+      }
+
+      .chat-side {
+        min-width: 0;
+      }
+
+      .chatbox {
+        width: 100%;
+      }
+
+      .file-tools {
+        gap: 8px;
+      }
+
+      .add-file-btn {
+        width: 44px;
+        height: 44px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -86,13 +264,22 @@
         width: 25px;
         height: 25px;
       }
+
+      .chat-brand .mabel-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .file-check-btn {
+        flex: 1;
+      }
     }
   </style>
 </head>
 
 <body class="chat-page">
 
-<!-- نماد ماه SVG؛ بدون تصویر خارجی -->
+<!-- نماد ماه SVG، بدون تصویر خارجی -->
 <svg xmlns="http://www.w3.org/2000/svg"
      width="0" height="0"
      aria-hidden="true"
@@ -102,7 +289,7 @@
       <linearGradient id="mabel-moon-gradient"
                       x1="15" y1="10" x2="85" y2="90"
                       gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stop-color="#d8c9ff"/>
+        <stop offset="0%" stop-color="#e9ddff"/>
         <stop offset="48%" stop-color="#a78bfa"/>
         <stop offset="100%" stop-color="#7c3aed"/>
       </linearGradient>
@@ -198,8 +385,20 @@
 
     <div
       id="fileStatus"
-      style="display:none;padding:8px 14px;color:var(--muted);font-size:12px;overflow-wrap:anywhere"
-    ></div>
+      class="file-status"
+      role="status"
+      aria-live="polite"
+    >
+      <span aria-hidden="true">📄</span>
+      <span id="fileStatusName" class="file-status-name"></span>
+      <button
+        id="removeFileButton"
+        class="remove-file-btn"
+        type="button"
+        onclick="removeSelectedFile()"
+        aria-label="حذف فایل انتخاب‌شده"
+      >حذف ×</button>
+    </div>
 
     <div class="composer">
 
@@ -211,16 +410,18 @@
         onchange="showSelectedFile()"
       >
 
-      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 0">
+      <div class="file-tools">
         <button
           type="button"
-          class="ghost"
+          class="add-file-btn"
           onclick="document.getElementById('fileInput').click()"
-        >📎 انتخاب فایل</button>
+          aria-label="انتخاب فایل"
+          title="انتخاب فایل"
+        >＋</button>
 
         <button
           type="button"
-          class="btn"
+          class="btn file-check-btn"
           id="uploadButton"
           onclick="uploadFile()"
         >بررسی فایل ✨</button>
@@ -247,6 +448,39 @@
     </div>
   </section>
 </div>
+
+<script>
+  // نمایش نام فایل انتخاب‌شده
+  function showSelectedFile() {
+    const input = document.getElementById("fileInput");
+    const status = document.getElementById("fileStatus");
+    const name = document.getElementById("fileStatusName");
+
+    if (!input || !status || !name) return;
+
+    const file = input.files && input.files[0];
+
+    if (!file) {
+      status.classList.remove("visible");
+      name.textContent = "";
+      return;
+    }
+
+    name.textContent = file.name;
+    status.classList.add("visible");
+  }
+
+  // حذف فایل انتخاب‌شده
+  function removeSelectedFile() {
+    const input = document.getElementById("fileInput");
+    const status = document.getElementById("fileStatus");
+    const name = document.getElementById("fileStatusName");
+
+    if (input) input.value = "";
+    if (status) status.classList.remove("visible");
+    if (name) name.textContent = "";
+  }
+</script>
 
 <script src="js/app.js"></script>
 <script src="js/chat.js"></script>
