@@ -1,18 +1,254 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>چت آنلاین | مِیبل AI</title><link rel="stylesheet" href="css/style.css"></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100d18">
+  <meta name="description" content="Mabel AI — دستیار هوشمند با هویت اختصاصی">
+  <title>چت آنلاین | Mabel AI</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* اختصاصی نماد ماه Mabel AI */
+    .mabel-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      background: linear-gradient(
+        145deg,
+        rgba(167, 139, 250, .16),
+        rgba(124, 58, 237, .06)
+      );
+      border: 1px solid rgba(196, 181, 253, .20);
+      box-shadow: 0 4px 18px rgba(124, 58, 237, .12);
+    }
+
+    .mabel-mark svg {
+      display: block;
+      width: 28px;
+      height: 28px;
+      overflow: visible;
+      filter: drop-shadow(0 2px 5px rgba(139, 92, 246, .35));
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand .brand-name {
+      letter-spacing: .2px;
+    }
+
+    .chat-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chat-brand .mabel-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+    }
+
+    .chat-brand .mabel-mark svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    .chat-brand-text {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .chat-brand-text small {
+      color: #a78bfa;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 480px) {
+      .mabel-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .mabel-mark svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  </style>
+</head>
+
 <body class="chat-page">
-<header class="nav"><a class="brand" href="index.html"><span>✦</span><b>مِیبل AI</b></a>
-<nav><a href="index.html">خانه</a><a class="active" href="chat.html">چت</a><a href="features.html">امکانات</a></nav>
-<div class="nav-actions"><button class="theme" onclick="toggleTheme()">◐</button><span class="pill">ONLINE AI</span></div></header>
+
+<!-- نماد ماه SVG؛ بدون تصویر خارجی -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="0" height="0"
+     aria-hidden="true"
+     style="position:absolute;overflow:hidden">
+  <symbol id="mabel-moon" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="mabel-moon-gradient"
+                      x1="15" y1="10" x2="85" y2="90"
+                      gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#d8c9ff"/>
+        <stop offset="48%" stop-color="#a78bfa"/>
+        <stop offset="100%" stop-color="#7c3aed"/>
+      </linearGradient>
+    </defs>
+    <path
+      d="M69 11
+         C43 10 22 29 22 52
+         C22 74 39 90 59 88
+         C72 87 83 79 89 66
+         C78 73 63 72 52 63
+         C39 52 38 34 48 22
+         C54 16 61 13 69 11 Z"
+      fill="url(#mabel-moon-gradient)"
+    />
+  </symbol>
+</svg>
+
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="صفحه خانه Mabel AI">
+    <span class="mabel-mark" aria-hidden="true">
+      <svg viewBox="0 0 100 100">
+        <use href="#mabel-moon"/>
+      </svg>
+    </span>
+    <b class="brand-name">Mabel AI</b>
+  </a>
+
+  <nav aria-label="منوی اصلی">
+    <a href="index.html">خانه</a>
+    <a class="active" href="chat.html">چت</a>
+    <a href="features.html">امکانات</a>
+  </nav>
+
+  <div class="nav-actions">
+    <button class="theme"
+            type="button"
+            onclick="toggleTheme()"
+            aria-label="تغییر تم">◐</button>
+    <span class="pill">ONLINE AI</span>
+  </div>
+</header>
+
 <div class="chat-layout">
-<aside class="chat-side"><button class="btn full" onclick="newChat()">＋ گفتگوی جدید</button>
-<input id="chatSearch" class="search" placeholder="جست‌وجو..." oninput="renderHistory()"><small>گفتگوهای اخیر</small><div id="history"></div>
-<div style="margin-top:20px;padding:12px;background:var(--soft);border-radius:12px;font-size:9px;color:var(--muted);line-height:2">🔐 کلید API روی سرور نگه‌داری می‌شود و داخل مرورگر قرار نمی‌گیرد.</div></aside>
-<section class="chatbox">
-<div class="chat-head"><div><b>🤖 مِیبل AI</b><small> ● آنلاین</small></div><button class="ghost" onclick="clearCurrent()">پاک کردن</button></div>
-<div class="messages" id="messages"></div><div id="typing" class="typing">● ● ●</div>
-<div class="composer"><textarea id="input" rows="1" placeholder="پیامت را بنویس..."></textarea><button class="send" onclick="sendMessage()">➤</button><div class="hint">Enter برای ارسال • Shift + Enter خط جدید</div></div>
-</section></div>
-<script src="js/app.js"></script><script src="js/chat.js"></script></body></html>
+
+  <aside class="chat-side">
+    <button class="btn full" type="button" onclick="newChat()">
+      ＋ گفتگوی جدید
+    </button>
+
+    <input
+      id="chatSearch"
+      class="search"
+      type="search"
+      placeholder="جست‌وجو..."
+      aria-label="جست‌وجوی گفتگوها"
+      oninput="renderHistory()"
+    >
+
+    <small>گفتگوهای اخیر</small>
+    <div id="history"></div>
+
+    <div style="margin-top:20px;padding:12px;background:var(--soft);border-radius:12px;font-size:10px;color:var(--muted);line-height:2">
+      🔐 کلید API روی سرور نگه‌داری می‌شود و داخل مرورگر قرار نمی‌گیرد.
+    </div>
+  </aside>
+
+  <section class="chatbox" aria-label="گفتگوی Mabel AI">
+
+    <div class="chat-head">
+      <div class="chat-brand">
+        <span class="mabel-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <use href="#mabel-moon"/>
+          </svg>
+        </span>
+
+        <span class="chat-brand-text">
+          <b>Mabel AI</b>
+          <small>● آنلاین</small>
+        </span>
+      </div>
+
+      <button class="ghost" type="button" onclick="clearCurrent()">
+        پاک کردن
+      </button>
+    </div>
+
+    <div class="messages" id="messages" aria-live="polite"></div>
+
+    <div id="typing" class="typing" aria-label="در حال پاسخ‌گویی">
+      ● ● ●
+    </div>
+
+    <div
+      id="fileStatus"
+      style="display:none;padding:8px 14px;color:var(--muted);font-size:12px;overflow-wrap:anywhere"
+    ></div>
+
+    <div class="composer">
+
+      <input
+        id="fileInput"
+        type="file"
+        accept=".pdf,.txt,.md,.csv,.json,.js,.html,.css,.py,.ts,.jsx,.tsx,.xml"
+        style="display:none"
+        onchange="showSelectedFile()"
+      >
+
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 0">
+        <button
+          type="button"
+          class="ghost"
+          onclick="document.getElementById('fileInput').click()"
+        >📎 انتخاب فایل</button>
+
+        <button
+          type="button"
+          class="btn"
+          id="uploadButton"
+          onclick="uploadFile()"
+        >بررسی فایل ✨</button>
+      </div>
+
+      <textarea
+        id="input"
+        rows="1"
+        placeholder="پیامت را بنویس..."
+        aria-label="متن پیام"
+      ></textarea>
+
+      <button
+        class="send"
+        id="sendButton"
+        type="button"
+        onclick="sendMessage()"
+        aria-label="ارسال پیام"
+      >➤</button>
+
+      <div class="hint">
+        Enter برای ارسال • Shift + Enter خط جدید
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/chat.js"></script>
+</body>
+</html>

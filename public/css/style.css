@@ -1425,3 +1425,300 @@ body:not(.chat-page) {
     transition-duration: .01ms !important;
   }
 }
+
+/* MABEL AI — Purple Glassmorphism */
+:root {
+  --glass-bg: rgba(30, 18, 48, 0.48);
+  --glass-bg-strong: rgba(35, 21, 56, 0.68);
+  --glass-border: rgba(195, 155, 255, 0.22);
+  --glass-glow: rgba(147, 51, 234, 0.16);
+}
+
+/* پس‌زمینه‌ی بنفش و نورانی */
+body {
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(126, 34, 206, 0.20), transparent 42%),
+    radial-gradient(ellipse at 85% 80%, rgba(91, 33, 182, 0.17), transparent 45%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+/* هدر شیشه‌ای */
+.nav,
+.chat-head,
+.chat-side,
+.chatbox,
+.composer,
+.welcome,
+.history-item,
+.bubble,
+.search,
+textarea,
+input,
+select {
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+  backdrop-filter: blur(22px) saturate(145%);
+}
+
+/* پنل‌های اصلی */
+.nav,
+.chat-side,
+.chatbox {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+/* کادر پیام‌ها */
+.chat-head,
+.composer {
+  background: rgba(28, 17, 44, 0.42);
+  border-color: var(--glass-border);
+}
+
+/* ورودی‌ها */
+.search,
+textarea,
+input,
+select {
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--glass-border);
+  color: var(--text);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.search:focus,
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(192, 132, 252, 0.75);
+  box-shadow: 0 0 20px var(--glass-glow);
+}
+
+/* حباب‌های پیام */
+.bubble {
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(196, 163, 255, 0.13);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+}
+
+/* پیام‌های خود کاربر */
+.user .bubble {
+  background: rgba(126, 34, 206, 0.20);
+  border-color: rgba(192, 132, 252, 0.28);
+}
+
+/* آیتم‌های تاریخچه */
+.history-item {
+  border: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.history-item:hover {
+  background: rgba(168, 85, 247, 0.12);
+  border-color: var(--glass-border);
+}
+
+/* دکمه‌ی ارسال */
+.send,
+.btn {
+  box-shadow: 0 0 22px rgba(139, 92, 246, 0.20);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.send:hover,
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 28px rgba(168, 85, 247, 0.35);
+}
+
+/* خطوط و لبه‌های شیشه‌ای */
+.chat-side,
+.chatbox,
+.nav {
+  border-radius: 20px;
+}
+
+/* موبایل */
+@media (max-width: 700px) {
+  .nav,
+  .chat-side,
+  .chatbox {
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+}
+
+/* کاهش حرکت برای کسانی که این گزینه را فعال کرده‌اند */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =====================================
+   MABEL AI — LUXURY GLASS THEME
+   Soft purple • Elegant • Responsive
+===================================== */
+
+:root {
+  --mabel-purple: #a78bfa;
+  --mabel-purple-light: #c4b5fd;
+  --mabel-purple-deep: #7c3aed;
+  --mabel-glass-light: rgba(255, 255, 255, 0.58);
+  --mabel-glass-border: rgba(167, 139, 250, 0.22);
+  --mabel-glass-shadow: 0 12px 36px rgba(65, 35, 110, 0.08);
+  --mabel-blur: blur(18px) saturate(135%);
+}
+
+/* Background */
+body {
+  background-image:
+    radial-gradient(
+      ellipse at 12% 8%,
+      rgba(167, 139, 250, 0.14),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 88% 82%,
+      rgba(124, 58, 237, 0.09),
+      transparent 35%
+    );
+  background-attachment: fixed;
+}
+
+/* Dark purple luxury mode */
+body.dark {
+  --mabel-glass-light: rgba(26, 20, 42, 0.66);
+  --mabel-glass-border: rgba(196, 181, 253, 0.17);
+  --mabel-glass-shadow: 0 14px 42px rgba(0, 0, 0, 0.20);
+
+  background-color: #100d18;
+  background-image:
+    radial-gradient(
+      ellipse at 12% 8%,
+      rgba(124, 58, 237, 0.17),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 88% 82%,
+      rgba(167, 139, 250, 0.09),
+      transparent 35%
+    );
+}
+
+/* Glass surfaces */
+.nav,
+.chat-side,
+.chatbox,
+.chat-head,
+.composer,
+.chat-search,
+#chatSearch,
+.history {
+  background-color: var(--mabel-glass-light);
+  border-color: var(--mabel-glass-border);
+  -webkit-backdrop-filter: var(--mabel-blur);
+  backdrop-filter: var(--mabel-blur);
+  box-shadow: var(--mabel-glass-shadow);
+}
+
+/* Soft edges */
+.nav,
+.chat-side,
+.chatbox,
+.chat-head,
+.composer {
+  border-radius: 20px;
+}
+
+/* Messages */
+.bubble {
+  border: 1px solid var(--mabel-glass-border);
+  border-radius: 18px;
+  box-shadow: 0 5px 18px rgba(80, 50, 130, 0.045);
+  overflow-wrap: anywhere;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+body.dark .bubble {
+  background-color: rgba(255, 255, 255, 0.045);
+}
+
+/* Purple accents */
+button,
+.btn {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+button:hover,
+.btn:hover {
+  box-shadow: 0 5px 20px rgba(139, 92, 246, 0.15);
+}
+
+button:active,
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  border-color: var(--mabel-glass-border);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--mabel-purple);
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.12);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .nav,
+  .chat-side,
+  .chatbox,
+  .chat-head,
+  .composer {
+    border-radius: 16px;
+  }
+
+  .nav,
+  .chat-head {
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,31 +1,159 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>مِیبل AI | دستیار هوشمند</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10091f">
+  <title>Mabel AI | دستیار هوشمند</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .mabel-symbol {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      overflow: visible;
+      filter: drop-shadow(0 0 7px rgba(168, 85, 247, .65));
+      transition: transform .25s ease, filter .25s ease;
+    }
+
+    .brand:hover .mabel-symbol {
+      transform: rotate(-10deg) scale(1.08);
+      filter: drop-shadow(0 0 12px rgba(168, 85, 247, .95));
+    }
+
+    .brand b {
+      direction: ltr;
+    }
+  </style>
 </head>
+
 <body>
-<header class="nav"><a class="brand" href="index.html"><span>✦</span><b>مِیبل AI</b></a>
-<nav><a class="active" href="index.html">خانه</a><a href="chat.html">چت</a><a href="features.html">امکانات</a></nav>
-<div class="nav-actions"><button class="theme" onclick="toggleTheme()">◐</button><a class="btn small" href="chat.html">شروع چت</a></div></header>
-<main>
-<section class="hero">
-<div class="hero-copy"><span class="pill">✦ دستیار هوشمند شخصی</span>
-<h1>ایده‌هایت را<br><em>هوشمندانه</em> بساز.</h1>
-<p>مِیبل AI یک دستیار مدرن برای ایده‌پردازی، نوشتن، برنامه‌نویسی و ساخت پروژه‌های دیجیتال است.</p>
-<div class="hero-buttons"><a class="btn" href="chat.html">شروع گفتگو ←</a><a class="ghost" href="features.html">مشاهده امکانات</a></div>
-<div class="trust">⚡ سریع &nbsp; • &nbsp; 🎯 ساده &nbsp; • &nbsp; ✨ مینیمال</div></div>
-<div class="hero-art"><div class="orb">🤖</div><div class="float-card c1">💡 ایده جدید پیدا شد</div><div class="float-card c2">✓ پروژه آماده است</div></div>
-</section>
-<section class="section"><div class="section-head"><span>برای هر کاری</span><h2>یک دستیار کنار تو</h2></div>
-<div class="grid3">
-<div class="feature"><div>✍️</div><h3>نوشتن</h3><p>متن، کپشن، ایده و محتوای حرفه‌ای تولید کن.</p></div>
-<div class="feature"><div>💻</div><h3>برنامه‌نویسی</h3><p>ساختار سایت و کدهای HTML، CSS و JavaScript را توسعه بده.</p></div>
-<div class="feature"><div>💡</div><h3>ایده‌پردازی</h3><p>برای کسب‌وکار و پروژه‌هایت ایده‌های تازه بگیر.</p></div>
-</div></section>
-<section class="cta"><h2>آماده‌ای شروع کنیم؟</h2><p>اولین گفتگویت را همین حالا با مِیبل AI شروع کن.</p><a class="btn" href="chat.html">ورود به دستیار 🤖</a></section>
-</main>
-<footer>© 2026 مِیبل AI — ساخته شده برای ایده‌های بزرگ.</footer>
-<script src="js/app.js"></script>
-</body></html>
+  <header class="nav">
+    <a class="brand" href="index.html" aria-label="Mabel AI - خانه">
+      <svg class="mabel-symbol" viewBox="0 0 100 100"
+           xmlns="http://www.w3.org/2000/svg" role="img"
+           aria-label="نماد ماه بنفش">
+        <defs>
+          <linearGradient id="mabelMoonGradient"
+                          x1="12%" y1="8%" x2="90%" y2="95%">
+            <stop offset="0%" stop-color="#f0dcff"/>
+            <stop offset="42%" stop-color="#bd68ff"/>
+            <stop offset="100%" stop-color="#7025d6"/>
+          </linearGradient>
+        </defs>
+
+        <path
+          d="M65 10
+             A40 40 0 1 0 90 68
+             A32 32 0 0 1 65 10Z"
+          fill="url(#mabelMoonGradient)"
+        />
+
+        <path
+          d="M25 65 Q38 79 53 70"
+          fill="none"
+          stroke="#f0dcff"
+          stroke-width="2"
+          stroke-linecap="round"
+          opacity=".9"
+        />
+
+        <circle cx="73" cy="20" r="3" fill="#ffffff"/>
+        <circle cx="24" cy="27" r="1.8" fill="#d8b4fe"/>
+      </svg>
+
+      <b>Mabel AI</b>
+    </a>
+
+    <nav>
+      <a class="active" href="index.html">خانه</a>
+      <a href="chat.html">چت</a>
+      <a href="features.html">امکانات</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="theme" onclick="toggleTheme()">◐</button>
+      <a class="btn small" href="chat.html">شروع چت</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="pill">✦ دستیار هوشمند شخصی</span>
+
+        <h1>
+          ایده‌هایت را<br>
+          <em>هوشمندانه</em> بساز.
+        </h1>
+
+        <p>
+          مِیبل AI یک دستیار مدرن برای ایده‌پردازی، نوشتن،
+          برنامه‌نویسی و ساخت پروژه‌های دیجیتال است.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn" href="chat.html">شروع گفتگو ←</a>
+          <a class="ghost" href="features.html">مشاهده امکانات</a>
+        </div>
+
+        <div class="trust">
+          ⚡ سریع &nbsp; • &nbsp; 🎯 ساده &nbsp; • &nbsp; ✨ مینیمال
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="orb">🤖</div>
+        <div class="float-card c1">💡 ایده جدید پیدا شد</div>
+        <div class="float-card c2">✓ پروژه آماده است</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span>برای هر کاری</span>
+        <h2>یک دستیار کنار تو</h2>
+      </div>
+
+      <div class="grid3">
+        <div class="feature">
+          <div>✍️</div>
+          <h3>نوشتن</h3>
+          <p>متن، کپشن، ایده و محتوای حرفه‌ای تولید کن.</p>
+        </div>
+
+        <div class="feature">
+          <div>💻</div>
+          <h3>برنامه‌نویسی</h3>
+          <p>ساختار سایت و کدهای HTML، CSS و JavaScript را توسعه بده.</p>
+        </div>
+
+        <div class="feature">
+          <div>💡</div>
+          <h3>ایده‌پردازی</h3>
+          <p>برای کسب‌وکار و پروژه‌هایت ایده‌های تازه بگیر.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>آماده‌ای شروع کنیم؟</h2>
+      <p>اولین گفتگویت را همین حالا با مِیبل AI شروع کن.</p>
+      <a class="btn" href="chat.html">ورود به دستیار 🤖</a>
+    </section>
+  </main>
+
+  <footer>© 2026 Mabel AI — ساخته شده برای ایده‌های بزرگ.</footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
